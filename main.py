@@ -1,8 +1,15 @@
 import socket
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
  
 # Define the UDP IP address and port to listen on
 UDP_IP = "0.0.0.0"
 UDP_PORT = 4210
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+xs = []
+ys = []
+
  
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
