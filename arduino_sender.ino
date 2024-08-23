@@ -8,6 +8,7 @@ const char* udpAddress = "192.168.1.41";
 const unsigned int udpPort = 4210;
 
 WiFiUDP udp;
+const int samplingRate = 8000; // 8kHz
 
 void setup() { 
   Serial.begin(115200);
@@ -31,5 +32,7 @@ void loop() {
   udp.beginPacket(udpAddress, udpPort);
   udp.write(packetBuffer);
   udp.endPacket(); 
-  delay(1);
+//  Serial.println(adcValue);
+  
+  delayMicroseconds(125);  // 1 second / 8000 samples = 125 microseconds per sample
 }
