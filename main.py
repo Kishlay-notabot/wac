@@ -12,5 +12,6 @@ print(f"Listening for UDP packets on {UDP_IP}:{UDP_PORT}")
  
 while True:
     # Receive data from the socket
+    
     data, addr = sock.recvfrom(1024)
     print(data.decode('utf-8'))
